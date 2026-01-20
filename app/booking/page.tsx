@@ -3,11 +3,11 @@
 import Navigation from "@/app/Components/Navigation";
 import Footer from "@/app/Components/Footer";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { Calendar, Clock, User, Phone, Mail, MapPin, FileText, CheckCircle } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 
-export default function BookingPage() {
+function BookingContent() {
     const searchParams = useSearchParams();
     const serviceId = searchParams.get("service");
 
@@ -365,5 +365,20 @@ export default function BookingPage() {
 
             <Footer />
         </div>
+    );
+}
+
+export default function BookingPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+                <div className="text-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                    <p className="text-gray-600">Loading...</p>
+                </div>
+            </div>
+        }>
+            <BookingContent />
+        </Suspense>
     );
 }
