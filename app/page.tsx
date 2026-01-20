@@ -2,6 +2,7 @@ import Navigation from "@/app/Components/Navigation";
 import Hero from "./Components/Hero";
 import Services from "./Components/Services";
 import HowItWorks from "./Components/HowItWorks";
+import WhyChooseFixit from "./Components/WhyChooseFixit";
 import Footer from "./Components/Footer";
 const page = () => {
   return (
@@ -10,6 +11,7 @@ const page = () => {
       <Hero></Hero>
       <Services></Services>
       <HowItWorks></HowItWorks>
+      <WhyChooseFixit></WhyChooseFixit>
       <Footer></Footer>
     </div>
   );

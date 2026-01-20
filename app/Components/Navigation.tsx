@@ -15,18 +15,21 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { href: "#services", label: "Services" },
-    { href: "#about", label: "About" },
-    { href: "#contact", label: "Contact" },
+    { href: "/", label: "Home" },
+    { href: "/search", label: "Explore" },
+    { href: "/how-it-works", label: "How It Works" },
+    { href: "/pricing", label: "Pricing" },
+    { href: "/about", label: "About" },
+    { href: "/faq", label: "FAQ" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "backdrop-blur-lg bg-white/95 shadow-lg border-b border-gray-200"
-          : "bg-white/90 backdrop-blur-sm shadow-sm"
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
+        ? "backdrop-blur-lg bg-white/95 shadow-lg border-b border-gray-200"
+        : "bg-white/90 backdrop-blur-sm shadow-sm"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -51,10 +54,10 @@ export default function Navbar() {
             ))}
 
             <a
-              href="/login"
+              href="/booking"
               className="ml-4 px-6 py-2.5 rounded-lg text-white font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg"
             >
-              Join as Worker
+              Book Now
             </a>
           </div>
 
@@ -66,19 +69,16 @@ export default function Navbar() {
           >
             <div className="flex flex-col gap-1.5">
               <span
-                className={`w-6 h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${
-                  isOpen ? "rotate-45 translate-y-2" : ""
-                }`}
+                className={`w-6 h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${isOpen ? "rotate-45 translate-y-2" : ""
+                  }`}
               ></span>
               <span
-                className={`w-6 h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${
-                  isOpen ? "opacity-0" : ""
-                }`}
+                className={`w-6 h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${isOpen ? "opacity-0" : ""
+                  }`}
               ></span>
               <span
-                className={`w-6 h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${
-                  isOpen ? "-rotate-45 -translate-y-2" : ""
-                }`}
+                className={`w-6 h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${isOpen ? "-rotate-45 -translate-y-2" : ""
+                  }`}
               ></span>
             </div>
           </button>
@@ -87,9 +87,8 @@ export default function Navbar() {
 
       {/* Mobile Dropdown */}
       <div
-        className={`md:hidden backdrop-blur-lg bg-white/95 border-t border-gray-200 transition-all duration-300 overflow-hidden ${
-          isOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`md:hidden backdrop-blur-lg bg-white/95 border-t border-gray-200 transition-all duration-300 overflow-hidden ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <div className="px-4 py-6 space-y-3">
           {navLinks.map((link) => (
@@ -103,20 +102,19 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="/login"
+            href="/booking"
             className="block w-full text-center px-6 py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-md hover:shadow-lg mt-4"
             onClick={() => setIsOpen(false)}
           >
-            Join as Worker
+            Book Now
           </a>
         </div>
       </div>
 
       {/* Animated Gradient Border */}
       <div
-        className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 transition-opacity duration-300 ${
-          isScrolled ? "opacity-100" : "opacity-0"
-        }`}
+        className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 transition-opacity duration-300 ${isScrolled ? "opacity-100" : "opacity-0"
+          }`}
         style={{
           backgroundSize: "200% 100%",
           animation: "gradientShift 3s ease infinite",

@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Wrench, Plug, Droplet, Brush, Hammer, Snowflake } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
@@ -111,71 +112,72 @@ export default function Services() {
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <motion.div
-                key={service.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative bg-white rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-slate-200 hover:border-slate-300 overflow-hidden"
-              >
-                {/* Hover Gradient Background */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${service.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-                ></div>
-
-                {/* Content */}
-                <div className="relative z-10 flex flex-col items-center text-center">
-                  {/* Icon Container */}
+              <Link href="/booking" key={service.name} className="block">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="group relative bg-white rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-slate-200 hover:border-slate-300 overflow-hidden cursor-pointer"
+                >
+                  {/* Hover Gradient Background */}
                   <div
-                    className={`relative p-4 bg-gradient-to-br ${service.iconBg} rounded-2xl mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-sm`}
-                  >
-                    <Icon
-                      className={`w-8 h-8 bg-gradient-to-br ${service.gradient} bg-clip-text text-transparent`}
-                      style={{
-                        WebkitTextFillColor: "transparent",
-                        backgroundClip: "text",
-                      }}
-                    />
+                    className={`absolute inset-0 bg-gradient-to-br ${service.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                  ></div>
+
+                  {/* Content */}
+                  <div className="relative z-10 flex flex-col items-center text-center">
+                    {/* Icon Container */}
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-20 rounded-2xl blur-xl transition-opacity duration-300`}
-                    ></div>
-                  </div>
-
-                  {/* Text Content */}
-                  <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-slate-900 transition-colors">
-                    {service.name}
-                  </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed group-hover:text-slate-700 transition-colors">
-                    {service.description}
-                  </p>
-
-                  {/* Hover Arrow */}
-                  <div className="mt-6 flex items-center gap-2 text-sm font-semibold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                    <span
-                      className={`bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}
+                      className={`relative p-4 bg-gradient-to-br ${service.iconBg} rounded-2xl mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-sm`}
                     >
-                      Book Now
-                    </span>
-                    <svg
-                      className={`w-4 h-4 transform group-hover:translate-x-1 transition-transform`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2.5}
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      <Icon
+                        className={`w-8 h-8 bg-gradient-to-br ${service.gradient} bg-clip-text text-transparent`}
+                        style={{
+                          WebkitTextFillColor: "transparent",
+                          backgroundClip: "text",
+                        }}
                       />
-                    </svg>
-                  </div>
-                </div>
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-20 rounded-2xl blur-xl transition-opacity duration-300`}
+                      ></div>
+                    </div>
 
-                {/* Corner Accent */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-slate-100 to-transparent opacity-50 rounded-bl-full"></div>
-              </motion.div>
+                    {/* Text Content */}
+                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-slate-900 transition-colors">
+                      {service.name}
+                    </h3>
+                    <p className="text-slate-600 text-sm leading-relaxed group-hover:text-slate-700 transition-colors">
+                      {service.description}
+                    </p>
+
+                    {/* Hover Arrow */}
+                    <div className="mt-6 flex items-center gap-2 text-sm font-semibold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                      <span
+                        className={`bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}
+                      >
+                        Book Now
+                      </span>
+                      <svg
+                        className={`w-4 h-4 transform group-hover:translate-x-1 transition-transform`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2.5}
+                          d="M13 7l5 5m0 0l-5 5m5-5H6"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Corner Accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-slate-100 to-transparent opacity-50 rounded-bl-full"></div>
+                </motion.div>
+              </Link>
             );
           })}
         </div>

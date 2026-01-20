@@ -70,7 +70,7 @@ export default function Hero() {
               className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start"
             >
               <a
-                href="/book"
+                href="/booking"
                 className="group relative px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 <span className="relative z-10 flex items-center gap-2">

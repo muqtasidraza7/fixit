@@ -72,10 +72,10 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-6 text-white">Quick Links</h4>
             <ul className="space-y-3">
               {[
-                { label: "Services", href: "#services" },
-                { label: "How It Works", href: "#how-it-works" },
-                { label: "Why Fixit", href: "#why-fixit" },
-                { label: "Contact", href: "#contact" },
+                { label: "Services", href: "/#services" },
+                { label: "How It Works", href: "/#how-it-works" },
+                { label: "Why Fixit", href: "/#why-fixit" },
+                { label: "Contact", href: "/contact" },
               ].map((link) => (
                 <li key={link.label}>
                   <a
@@ -95,10 +95,10 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-6 text-white">Support</h4>
             <ul className="space-y-3">
               {[
-                { label: "Help Center", href: "#" },
-                { label: "Terms of Service", href: "#" },
-                { label: "Privacy Policy", href: "#" },
-                { label: "FAQs", href: "#" },
+                { label: "Help Center", href: "/faq" },
+                { label: "Terms of Service", href: "/terms" },
+                { label: "Privacy Policy", href: "/privacy" },
+                { label: "FAQs", href: "/faq" },
               ].map((link) => (
                 <li key={link.label}>
                   <a
@@ -130,13 +130,13 @@ export default function Footer() {
                 <span className="text-sm">support@fixit.com</span>
               </a>
               <a
-                href="tel:+923001234567"
+                href="tel:+923211234567"
                 className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors group"
               >
                 <div className="p-2 bg-slate-800/50 rounded-lg group-hover:bg-indigo-600/20 transition-colors">
                   <Phone className="w-4 h-4" />
                 </div>
-                <span className="text-sm">+92 300 1234567</span>
+                <span className="text-sm">+92 321 1234567</span>
               </a>
               <div className="flex items-center gap-3 text-slate-300">
                 <div className="p-2 bg-slate-800/50 rounded-lg">
